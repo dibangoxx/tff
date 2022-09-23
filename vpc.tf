@@ -6,6 +6,7 @@ resource "aws_vpc" "demo" {
     Name = "demo-vpc"
   }
 }
+
 resource "aws_subnet" "demo1" {
   vpc_id     = aws_vpc.demo.id
   cidr_block = "70.70.1.0/28"
@@ -38,7 +39,7 @@ resource "aws_route_table" "Pu_RT" {
   }
 
   tags = {
-    Name = "massian"
+    Name = "massexp"
   }
 }
 resource "aws_route_table" "Private-RT" {

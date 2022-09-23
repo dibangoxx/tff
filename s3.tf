@@ -1,9 +1,13 @@
-resource "aws_s3_bucket" "bucklebuck" {
-  bucket = "my-tf-massiveprince-bucket11"
-  acl    = "private"
+resource "aws_s3_bucket" "dev-ch1bango" {
+  bucket = "my-tf-test0bucket"
 
   tags = {
-    Name        = "rav1i-day1a-santhos1h-deepak1231"
+    Name        = "My bucket"
     Environment = "Dev"
   }
+}
+
+resource "aws_s3_bucket_acl" "example" {
+  bucket = aws_s3_bucket.dev-ch1bango.id
+  acl    = "private"
 }
